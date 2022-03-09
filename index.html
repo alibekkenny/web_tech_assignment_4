@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="Icon" type="image/ico" href="src/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,13 @@
                 <a class="nav-link text-white px-4 py-2" href="skills.html">Skills</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white px-4 py-2" href="contacts.html">Contacts</a>
+                <a class="nav-link text-white px-4 py-2" href="contacts.html">Feedback</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white px-4 py-2" href="comments.html">Reviews</a>
+            </li>
+            <li class="nav-item ms-auto">
+                <a id="signed" class="nav-link text-white px-4 py-2" href="auth.html">Sign In</a>
             </li>
         </ul>
     </div>
@@ -41,11 +48,15 @@
             <img id="lelouch_pic" class="rounded-circle img-fluid" src="src/lelouch.jpg">
         </div>
     </div>
+
 </body>
 
 </html>
 <script>
     var audio = new Audio("src/geass_sound_cut.mp3");
+    if (signedUser != null) {
+        $("#signed").text("Sign out");
+    }
 
     function useGeass() {
         audio.play();

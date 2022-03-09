@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="Icon" type="image/ico" href="src/favicon.ico">
-
+    <script src="app.js"></script>
 </head>
 
 <body>
@@ -26,7 +26,13 @@
                 <a class="nav-link text-white px-4 py-2" href="skills.html">Skills</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white px-4 py-2" href="contacts.html">Contacts</a>
+                <a class="nav-link text-white px-4 py-2" href="contacts.html">Feedback</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white px-4 py-2" href="comments.html">Reviews</a>
+            </li>
+            <li class="nav-item ms-auto">
+                <a id="signed" class="nav-link text-white px-4 py-2" href="auth.html">Sign In</a>
             </li>
         </ul>
     </div>
@@ -67,7 +73,7 @@
                 </div>
                 <div class="slide h-100" style="display: none;">
                     <a href="https://github.com/alibekkenny/e_shop_front">
-                        <img class="w-100 h-100" src="src/proj_02.jpg" style="width: 100%;">
+                        <img class="w-100 h-100" src="src/bunnygirl.png">
                         <h5 class="info_text position-absolute text-center w-100 px-5 text-white" style="top: 45%; display: none;">
                             Here is my own project "Electronics shop", where you can see info about different electronics and look for the one you need.
                         </h5>
@@ -75,7 +81,7 @@
                 </div>
                 <div class="slide h-100" style="display: none;">
                     <a href="https://github.com/alibekkenny/asp_front">
-                        <img class="w-100 h-100" src="src/proj_03.jpg" style="width: 100%;">
+                        <img class="w-100 h-100" src="src/valley_of_the_end.jpg">
                         <h5 class="info_text position-absolute text-center w-100 px-5 text-white" style="top: 45%; display: none;">
                             Here is my another own project. Questionnaire of satisfaction with the work of some company.
                         </h5>
@@ -93,6 +99,9 @@
 </body>
 
 <script>
+    if (signedUser != null) {
+        $("#signed").text("Sign out");
+    }
     let currentSlideIndex = 0;
     let slides = document.getElementsByClassName("slide");
     let projInfo = document.getElementsByClassName("info_text");
